@@ -2,6 +2,11 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
+import streamlit as st
+import pandas as pd
+from modules.report_generator import analyze_data, generate_report
+from datetime import datetime
+
 st.set_page_config(page_title="자동 보고서", page_icon="📊", layout="wide")
 st.title("📊 자동 보고서 생성")
 st.markdown("데이터를 분석하여 월간 보고서를 자동으로 생성합니다.")
