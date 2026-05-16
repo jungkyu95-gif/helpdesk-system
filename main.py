@@ -1,6 +1,10 @@
 import sys
 import os
 sys.path.insert(0, os.path.dirname(__file__))
+
+import streamlit as st
+import pandas as pd
+from modules.data_processor import process_uploaded_file, load_from_db
 st.set_page_config(
     page_title="IT Helpdesk 관리 시스템",
     page_icon="🔧",
