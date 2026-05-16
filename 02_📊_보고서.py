@@ -1,7 +1,6 @@
-import streamlit as st
-import pandas as pd
-from modules.report_generator import analyze_data, generate_report
-from datetime import datetime
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 st.set_page_config(page_title="자동 보고서", page_icon="📊", layout="wide")
 st.title("📊 자동 보고서 생성")
