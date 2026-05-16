@@ -303,3 +303,11 @@ with tab2:
         st.download_button("📥 Excel 보고서 다운로드", data=buf, file_name=fname,
                            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                            type="primary")
+
+# 템플릿 보고서 섹션
+st.subheader("📋 원본 양식 보고서 생성")
+template_file = st.file_uploader("원본 보고서 양식 업로드 (xlsx)", type=['xlsx'])
+if template_file and st.button("📊 양식 보고서 생성"):
+    from template_report_generator import generate_template_report
+    buf = generate_template_report(df, template_file)
+    st.download_button("⬇️ 보고서 다운로드", buf, "월간보고서.xlsx")
